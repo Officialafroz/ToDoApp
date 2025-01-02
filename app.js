@@ -3,7 +3,6 @@ const addTaskButton = document.getElementById("addTaskButton");
 const taskList = document.getElementById("taskList");
 const completedList = document.getElementById("completed-list");
 
-
 // Add event listener to the button
 addTaskButton.addEventListener("click", () => {
   const taskValue = taskInput.value.trim(); // Get and trim input value
