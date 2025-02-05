@@ -2,6 +2,7 @@ const taskInput = document.getElementById("taskInput");
 const addTaskButton = document.getElementById("addTaskButton");
 const taskList = document.getElementById("taskList");
 const completedList = document.getElementById("completed-list");
+let i=1;
 
 // Add event listener to the button
 addTaskButton.addEventListener("click", () => {
@@ -15,10 +16,12 @@ addTaskButton.addEventListener("click", () => {
     // Create a checkbox
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
+    checkbox.id = "task" + `${i}`;
 
     // Create a label to display the task
     const taskLabel = document.createElement("label");
     taskLabel.textContent = taskValue;
+    taskLabel.htmlFor = "task" + `${i}`;
 
     checkbox.addEventListener("change", () => {
         if (checkbox.checked) {
@@ -37,7 +40,7 @@ addTaskButton.addEventListener("click", () => {
 
     // Clear the input field
     taskInput.value = "";
-
+    i++;
 
   } else {
     alert("Please enter a task.");

@@ -1,114 +1,136 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-html, body {
-    height: 100%;
-    width: 100%;
+html,
+body {
+  height: 100%;
+  width: 100%;
 }
 
 nav {
-    height: 7%;
-    width: 100%;
-    /* background-color: rgba(0, 0, 0, 0.584); */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 7%;
+  width: 100%;
+  /* background-color: rgba(0, 0, 0, 0.584); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 nav h1 {
-    font-size: 32px;
-    font-weight: 600;
+  font-size: 32px;
+  font-weight: 600;
 }
 
 #tasks {
-    height: 84%;
-    width: 100%;
-    display: flex;
-    align-items: center;
+  height: 84%;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 #tasks #tasks-tobe-done {
-    height: 100%;
-    width: 50%;
-    border-right: 2px solid black;
-    /* background-color: aqua; */
+  height: 100%;
+  width: 50%;
+  border-right: 2px solid black;
+  /* background-color: aqua; */
 }
 
 .heading {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
 }
 
 .heading + .task-list {
-    padding: 14px;
-    
+  padding: 14px;
 }
 
 .heading h3 {
-    font-size: 28px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    /* padding-bottom: 20px;     */
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  /* padding-bottom: 20px;     */
 }
 
-#task-list {
-    
+.task-list {
+  padding: 10px;
+  max-height: 300px; /* Optional: Set a max height */
+  overflow-y: auto; /* Enable scrolling if necessary */
 }
 
 .task-item {
-    width: 100%;
-    padding: 6px;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  /* margin-bottom: 20px; */
+  word-wrap: break-word;
+  /* transition: 0.4s ease-in-out; */
 }
 
-label {
-    width: 100%;
-    margin-left: 8px;
+.task-item label {
+  margin-left: 8px;
+
+  flex: 1; /* Use the available space for the label */
+  word-wrap: break-word; /* Ensure text breaks into a new line */
+  white-space: normal;
 }
 
 #completed-task {
-    height: 100%;
-    width: 50%;
-    /* background-color: gray; */
+  height: 100%;
+  width: 50%;
+  /* background-color: gray; */
 }
 
 #inp {
-    background-color: blue;
-    position: absolute;
-    bottom: 1%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  /* background-color: blue;   */
+  position: absolute;
+  bottom: 1%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-input[type=text] {
-    height: 30px;
-    width: 400px;
-    padding: 4px 10px;
-    border: 1px solid black;
-    border-radius: 18px;
+input[type="text"] {
+  height: 40px;
+  width: 400px;
+  padding: 4px 10px;
+  border: 2px solid black;
+  border-radius: 18px;
+  outline: none;
 }
 
 button {
-    height: 30px;
-    width: 80px;
-    font-size: 14px;
-    font-weight: 400;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 18px;
-    transition: .5s;
+  height: 40px;
+  width: 80px;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 18px;
+  outline: none;
+  transition: 0.5s;
 }
 
 button:hover {
-    color: white;
-    background-color: rgb(78, 148, 240);
+  color: white;
+  background-color: rgb(78, 148, 240);
+  border: none;
 }
 
-input[type=checkbox]:checked ~ label {
-    text-decoration: line-through;
+.task-item {
+
+}
+
+input[type="checkbox"]:checked ~ label {
+  text-decoration: line-through;
+}
+
+input[type="checkbox"]:checked ~ label {
+  color: gray;
 }
